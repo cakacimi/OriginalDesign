@@ -8,13 +8,10 @@ void setup()
   size(500,500);
   background(0);
 }
-void draw()
-{
-  frameRate(10);
-  background(0);
-  smooth();
 
-  //red circle//
+void circles()
+{
+ //red circle//
   fill(255-y,0,0,100);
   ellipse(xPosition,yPosition,z,z);
   
@@ -41,10 +38,10 @@ void draw()
   //indigo circle//
   fill(138,43,226-y,100);
   ellipse(xPosition,yPosition,z-300,z-300);
-  
-  
-  //change//
-  
+}
+
+  void change()
+{  
   z= z+10;
   y=y+3;
   if (z>490)
@@ -55,5 +52,13 @@ void draw()
   {
     y=1;
   }
+}
 
+void draw()
+{
+  frameRate(10);
+  background(0);
+  smooth();
+  circles();
+  change();
 }
